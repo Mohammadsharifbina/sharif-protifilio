@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sharif Bina - Full-Stack Developer and Graphic Designer.">
+  <meta name="theme-color" content="#3B1E54">
+  <title>Sharif Bina | Developer Portfolio</title>
+
+  <!-- Icons: requires an internet connection -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #3B1E54;
+      --primary-light: #60377f;
+      --accent: #c6a4f5;
+      --bg: #100c16;
+      --surface: #1c1525;
+      --surface-light: #261d32;
+      --text: #f8f5fc;
+      --muted: #b8adc5;
+      --border: rgba(255, 255, 255, .1);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
+    
+/* Gradient theme */
+:root {
+    --primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+/* Buttons */
+.btn,
+button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn:hover,
+button:hover {
+    background: linear-gradient(135deg, #764ba2, #f093fb);
+    transform: translateY(-3px);
+}
+
+/* Section headings */
+.section-title {
+    background: linear-gradient(90deg, #667eea, #f093fb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Profile image border */
+.profile-image {
+    border: 4px solid transparent;
+    background:
+        linear-gradient(#141e30, #141e30) padding-box,
+        linear-gradient(135deg, #667eea, #f093fb) border-box;
+}
+
+/* Project and post cards */
+.project-card,
+.post-card,
+.skill-card {
+    border: 1px solid rgba(118, 75, 162, 0.35);
+    transition: 0.3s ease;
+}
+
+.project-card:hover,
+.post-card:hover,
+.skill-card:hover {
+    border-color: #f093fb;
+    transform: translateY(-5px);
+}
+
+/* Social media icons */
+.social-links a {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden
+    }
+
+    body[dir="rtl"] {
+      font-family: Tahoma, "Segoe UI", Arial, sans-serif
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin-inline: auto
+    }
+
+    .section {
+      padding: 85px 0
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin: 8px 0
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: auto
+    }
+
+    .gradient-text {
+      background: linear-gradient(110deg, #c6a4f5, #fff, #a77ce8);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent
+    }
+
+    /* Header and navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(16, 12, 22, .94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border)
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      white-space: nowrap
+    }
+
+    .logo span {
+      color: var(--accent)
+    }
+
+    .nav-right,
+    .nav-actions,
+    .nav-links {
+      display: flex;
+      align-items: center
+    }
+
+    .nav-right {
+      gap: 22px
+    }
+
+    .nav-links {
+      gap: 20px;
+      list-style: none
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: .9rem;
+      transition: .2s
+    }
+
+    .nav-links a i {
+      color: var(--accent)
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      transform: translateY(-2px)
+    }
+
+    .nav-actions {
+      gap: 9px
+    }
+
+    .language-btn,
+    .menu-btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 9px 13px;
+      cursor: pointer
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 1.1rem
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 22px;
+      border-radius: 11px;
+      border: 1px solid transparent;
+      font-weight: 650;
+      cursor: pointer;
+      transition: .2s
+    }
+
+    .btn:hover {
+      transform: translateY(-3px)
+    }
+
+    .btn-primary {
+      background: var(--primary-light);
+      color: white
+    }
+
+    .btn-primary:hover {
+      background: #754a99
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      background: transparent;
+      color: var(--text)
+    }
+
+    .btn-outline:hover {
+      background: var(--surface-light)
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 75% 35%, rgba(96, 55, 127, .25), transparent 45%), radial-gradient(ellipse at 15% 90%, rgba(96, 55, 127, .15), transparent 40%)
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 50px;
+      align-items: center;
+      padding-block: 70px
+    }
+
+    .hero-copy .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, .03);
+      letter-spacing: 1px
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 6vw, 4.6rem);
+      line-height: 1.15;
+      margin: 23px 0 18px
+    }
+
+    .hero h2 {
+      font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 15px
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 560px;
+      font-size: 1.03rem
+    }
+
+    .hero-buttons,
+    .hero-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 27px
+    }
+
+    .hero-socials {
+      gap: 20px;
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    .hero-socials a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .hero-socials a i {
+      color: var(--accent)
+    }
+
+    .hero-socials a:hover {
+      color: var(--accent)
+    }
+
+    .hero-art {
+      display: grid;
+      place-items: center;
+      min-height: 330px
+    }
+
+    .profile-frame {
+      width: min(310px, 100%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      padding: 9px;
+      background: linear-gradient(135deg, var(--accent), var(--primary), #8d64b7);
+      box-shadow: 0 0 80px rgba(123, 78, 160, .25);
+      animation: float 5s ease-in-out infinite
+    }
+
+    .profile-placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid var(--bg);
+      background: var(--surface)
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-12px)
+      }
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 45px;
+      align-items: center
+    }
+
+    .about-visual {
+      min-height: 300px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 30% 25%, rgba(198, 164, 245, .2), transparent 45%), var(--surface);
+      padding: 30px
+    }
+
+    .about-monogram {
+      font-size: 7rem;
+      font-weight: 900;
+      color: var(--accent);
+      text-shadow: 0 10px 40px rgba(198, 164, 245, .15)
+    }
+
+    .about-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin-bottom: 15px
+    }
+
+    .about-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      margin-top: 24px
+    }
+
+    .detail-item {
+      background: var(--surface);
+      padding: 13px;
+      border-radius: 12px;
+      border: 1px solid var(--border)
+    }
+
+    .detail-item strong {
+      display: block;
+      font-size: .85rem;
+      color: var(--accent)
+    }
+
+    .detail-item span {
+      overflow-wrap: anywhere;
+      font-size: .93rem
+    }
+
+    /* Skills, projects and posts */
+    .skills-section {
+      background: #15101c
+    }
+
+    .skills-grid,
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .skill-card,
+    .project-card,
+    .post-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform .25s, border-color .25s
+    }
+
+    .skill-card {
+      padding: 24px
+    }
+
+    .skill-card:hover,
+    .project-card:hover,
+    .post-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(198, 164, 245, .5)
+    }
+
+    .skill-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      background: var(--primary);
+      border-radius: 14px;
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-bottom: 15px
+    }
+
+    .skill-card h3 {
+      margin-bottom: 7px
+    }
+
+    .skill-card p,
+    .card-body p {
+      color: var(--muted);
+      font-size: .93rem
+    }
+
+    .project-art,
+    .post-art {
+      height: 180px;
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+      color: #fff;
+      background: linear-gradient(135deg, #3B1E54, #8056a0)
+    }
+
+    .art-two {
+      background: linear-gradient(135deg, #20304d, #526ba1)
+    }
+
+    .art-three {
+      background: linear-gradient(135deg, #3c2945, #a2698c)
+    }
+
+    .post-art {
+      height: 165px;
+      background: linear-gradient(135deg, #352143, #624d85)
+    }
+
+    .card-body {
+      padding: 21px
+    }
+
+    .card-body h3 {
+      font-size: 1.15rem;
+      margin: 9px 0
+    }
+
+    .card-body p {
+      margin-bottom: 15px
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 16px
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(198, 164, 245, .1);
+      border: 1px solid rgba(198, 164, 245, .18);
+      color: var(--accent);
+      padding: 4px 9px;
+      border-radius: 7px;
+      font-size: .78rem
+    }
+
+    .card-link {
+      color: var(--accent);
+      font-size: .92rem;
+      font-weight: 650
+    }
+
+    .card-link i {
+      margin-inline-start: 5px
+    }
+
+    /* Contact */
+    .contact-section {
+      background: radial-gradient(ellipse at 50% 100%, rgba(96, 55, 127, .17), transparent 60%), #15101c
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 42px
+    }
+
+    .contact-info h3 {
+      font-size: 1.7rem;
+      margin-bottom: 12px
+    }
+
+    .contact-info>p {
+      color: var(--muted);
+      margin-bottom: 25px
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      background: var(--primary);
+      border-radius: 12px;
+      flex-shrink: 0;
+      color: var(--accent)
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted)
+    }
+
+    .contact-item a {
+      overflow-wrap: anywhere
+    }
+
+    .contact-form {
+      background: var(--surface);
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius)
+    }
+
+    .form-group {
+      margin-bottom: 17px
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: .9rem;
+      font-weight: 600
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: #130e1a;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 13px;
+      outline: none
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent)
+    }
+
+    .form-group textarea {
+      min-height: 135px;
+      resize: vertical
+    }
+
+    .form-status {
+      color: var(--accent);
+      margin-top: 12px;
+      font-size: .9rem;
+      overflow-wrap: anywhere
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    footer .logo {
+      display: inline-block;
+      color: var(--text)
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin: 20px 0
+    }
+
+    .footer-socials a {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--surface);
+      color: var(--accent);
+      font-size: 1.25rem;
+      transition: .25s
+    }
+
+    .footer-socials a:hover {
+      background: var(--primary-light);
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 22px rgba(96, 55, 127, .3)
+    }
+
+    .back-top {
+      position: fixed;
+      bottom: 20px;
+      inset-inline-end: 20px;
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 900;
+      display: none;
+      font-size: 1.1rem
+    }
+
+    .back-top.visible {
+      display: block
+    }
+
+    [dir="rtl"] .hero h1 {
+      letter-spacing: 0
+    }
+
+    /* Responsive */
+    @media(max-width:900px) {
+      .nav-links {
+        gap: 11px
+      }
+
+      .nav-links a {
+        font-size: .82rem
+      }
+
+      .hero-grid {
+        gap: 25px
+      }
+
+      .cards-grid,
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:700px) {
+      .section {
+        padding: 65px 0
+      }
+
+      nav {
+        min-height: 68px
+      }
+
+      .menu-btn {
+        display: inline-block
+      }
+
+      .nav-right {
+        gap: 10px
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 15px 5%;
+        background: #17101f;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0
+      }
+
+      .nav-links.open {
+        display: flex
+      }
+
+      .nav-links li a {
+        display: flex;
+        padding: 12px 0;
+        font-size: 1rem
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr
+      }
+
+      .hero-grid {
+        padding-block: 55px;
+        gap: 25px
+      }
+
+      .hero-copy {
+        text-align: center
+      }
+
+      .hero-copy p {
+        margin-inline: auto
+      }
+
+      .hero-buttons,
+      .hero-socials {
+        justify-content: center
+      }
+
+      .hero-art {
+        min-height: 260px
+      }
+
+      .profile-frame {
+        width: 240px
+      }
+
+      .about-visual {
+        min-height: 220px
+      }
+
+      .about-monogram {
+        font-size: 5rem
+      }
+
+      .contact-grid {
+        gap: 28px
+      }
+    }
+
+    @media(max-width:480px) {
+      .logo {
+        font-size: 1.2rem
+      }
+
+      .language-btn {
+        padding: 8px 10px
+      }
+
+      .hero h1 {
+        font-size: 2.55rem
+      }
+
+      .hero-buttons .btn {
+        width: 100%
+      }
+
+      .cards-grid,
+      .skills-grid,
+      .about-details {
+        grid-template-columns: 1fr
+      }
+
+      .contact-form {
+        padding: 19px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a href="#home" class="logo">Sharif<span>Bina.</span></a>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home"><i class="fa-solid fa-house"></i><span data-i18n="navHome">Home</span></a></li>
+          <li><a href="#about"><i class="fa-solid fa-user"></i><span data-i18n="navAbout">About</span></a></li>
+          <li><a href="#skills"><i class="fa-solid fa-code"></i><span data-i18n="navSkills">Skills</span></a></li>
+          <li><a href="#projects"><i class="fa-solid fa-laptop-code"></i><span
+                data-i18n="navProjects">Projects</span></a></li>
+          <li><a href="#posts"><i class="fa-solid fa-newspaper"></i><span data-i18n="navPosts">Posts</span></a></li>
+          <li><a href="#contact"><i class="fa-solid fa-envelope"></i><span data-i18n="navContact">Contact</span></a>
+          </li>
+        </ul>
+        <div class="nav-actions">
+          <button class="language-btn" id="languageBtn" type="button">پښتو</button>
+          <button class="menu-btn" id="menuBtn" type="button" aria-label="Toggle navigation" aria-expanded="false"><i
+              class="fa-solid fa-bars"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow" data-i18n="heroEyebrow">WELCOME TO MY PORTFOLIO</span>
+          <h1><span data-i18n="heroHello">Hi, I'm</span> <span class="gradient-text">Sharif Bina</span></h1>
+          <h2 data-i18n="heroRole">Full-Stack Developer & Graphic Designer</h2>
+          <p data-i18n="heroDescription">I build responsive websites and creative digital experiences using modern web
+            technologies.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-folder-open"></i><span
+                data-i18n="viewProjects">Explore Projects</span></a>
+            <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i><span
+                data-i18n="contactMe">Contact Me</span></a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/Mohammadsharifbina" target="_blank" rel="noopener noreferrer"><i
+                class="fa-brands fa-github"></i> GitHub</a>
+            <a href="mailto:sharif.bina2021@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="profile-frame">
+            <div class="profile-placeholder">
+              <!-- Keep your photo in the same folder as index.html -->
+              <img src="for lottery.png" alt="Sharif Bina Profile Photo" class="profile-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="aboutEyebrow">GET TO KNOW ME</span>
+          <h2><span data-i18n="aboutTitle">About</span> <span class="gradient-text">Me</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-visual">
+                          <img src="s.jpg" alt="Sharif Bina Profile Photo" class="profile-image">
+
+          </div>
+          <div class="about-content">
+            <h3 data-i18n="aboutSubtitle">Developer by passion, creator by nature.</h3>
+            <p data-i18n="aboutText1">My name is Sharif Bina. I am a Full-Stack Developer and Graphic Designer
+              interested in creating useful, attractive digital products.</p>
+            <p data-i18n="aboutText2">I work with HTML, CSS, JavaScript, PHP, and Laravel. I enjoy turning ideas into
+              practical web experiences.</p>
+            <div class="about-details">
+              <div class="detail-item"><strong data-i18n="detailName">Name</strong><span>Sharif Bina</span></div>
+              <div class="detail-item"><strong data-i18n="detailRole">Profession</strong><span
+                  data-i18n="roleValue">Developer & Designer</span></div>
+              <div class="detail-item"><strong
+                  data-i18n="detailEmail">Email</strong><span>sharif.bina2021@gmail.com</span></div>
+              <div class="detail-item"><strong data-i18n="detailLanguages">Languages</strong><span
+                  data-i18n="languageValue">Pashto & English</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="skillsEyebrow">WHAT I WORK WITH</span>
+          <h2><span data-i18n="skillsTitle">My</span> <span class="gradient-text">Skills</span></h2>
+          <p data-i18n="skillsIntro">Technologies and creative skills I use to bring ideas to life.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+            <h3>HTML5</h3>
+            <p data-i18n="skillHtml">Semantic and accessible website structure.</p>
+          </article>
+          <article class="skill-card">
+            <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+            <h3>CSS3</h3>
+            <p data-i18n="skillCss">Responsive layouts and modern styling.</p>
+          </article>
+          <article class="skill-card">
+            <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+            <h3>JavaScript</h3>
+            <p data-i18n="skillJs">Interactive interfaces and browser functionality.</p>
+          </article>
+          <article class="skill-card">
+            <div class="skill-icon"><i class="fa-brands fa-php"></i></div>
+            <h3>PHP</h3>
+            <p data-i18n="skillPhp">Server-side programming and web applications.</p>
+          </article>
+          <article class="skill-card">
+            <div class="skill-icon"><i class="fa-brands fa-laravel"></i></div>
+            <h3>Laravel</h3>
+            <p data-i18n="skillLaravel">PHP framework for structured web development.</p>
+          </article>
+          <article class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-pen-nib"></i></div>
+            <h3 data-i18n="designTitle">Graphic Design</h3>
+            <p data-i18n="skillDesign">Visual communication and creative digital designs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="projectsEyebrow">MY RECENT WORK</span>
+          <h2><span data-i18n="projectsTitle">Featured</span> <span class="gradient-text">Projects</span></h2>
+          <p data-i18n="projectsIntro">A selection of projects and concepts. Replace these examples with your real work.
+          </p>
+        </div>
+        <div class="cards-grid">
+          <article class="project-card">
+            <div class="project-art"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="card-body">
+              <h3 data-i18n="project1Title">Personal Portfolio</h3>
+              <p data-i18n="project1Text">A responsive portfolio for presenting skills, work, and contact details.</p>
+              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
+                  class="tag">JavaScript</span></div><a class="card-link" href="https://github.com/Mohammadsharifbina"
+                target="_blank" rel="noopener noreferrer"><span data-i18n="sourceCode">View GitHub</span> <i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-two"><i class="fa-solid fa-table-columns"></i></div>
+            <div class="card-body">
+              <h3 data-i18n="project2Title">Dashboard Concept</h3>
+              <p data-i18n="project2Text">A dashboard concept for organizing information and managing content.</p>
+              <div class="tags"><span class="tag">JavaScript</span><span class="tag">CSS</span><span
+                  class="tag">UI</span></div><a class="card-link" href="https://github.com/Mohammadsharifbina"
+                target="_blank" rel="noopener noreferrer"><span data-i18n="sourceCode">View GitHub</span> <i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-three"><i class="fa-brands fa-laravel"></i></div>
+            <div class="card-body">
+              <h3 data-i18n="project3Title">Laravel Web App</h3>
+              <p data-i18n="project3Text">A sample web application concept built around PHP and Laravel.</p>
+              <div class="tags"><span class="tag">PHP</span><span class="tag">Laravel</span><span
+                  class="tag">MySQL</span></div><a class="card-link" href="https://github.com/Mohammadsharifbina"
+                target="_blank" rel="noopener noreferrer"><span data-i18n="sourceCode">View GitHub</span> <i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="posts">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="postsEyebrow">IDEAS & KNOWLEDGE</span>
+          <h2><span data-i18n="postsTitle">Latest</span> <span class="gradient-text">Posts</span></h2>
+          <p data-i18n="postsIntro">Notes, tutorials, and ideas from my development journey.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="post-card">
+            <div class="post-art"><i class="fa-solid fa-code"></i></div>
+            <div class="card-body"><span class="tag">Frontend</span>
+              <h3 data-i18n="post1Title">Getting Started with Web Development</h3>
+              <p data-i18n="post1Text">An introduction to HTML, CSS, and JavaScript for beginners.</p><a href="#contact"
+                class="card-link"><span data-i18n="readMore">Read More</span> <i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-art"><i class="fa-brands fa-laravel"></i></div>
+            <div class="card-body"><span class="tag">Laravel</span>
+              <h3 data-i18n="post2Title">Understanding Laravel</h3>
+              <p data-i18n="post2Text">Explore the basics of building structured PHP applications.</p><a href="#contact"
+                class="card-link"><span data-i18n="readMore">Read More</span> <i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-art"><i class="fa-solid fa-robot"></i></div>
+            <div class="card-body"><span class="tag">AI</span>
+              <h3 data-i18n="post3Title">AI Tools for Developers</h3>
+              <p data-i18n="post3Text">How AI assistants can support coding, testing, and learning.</p><a
+                href="#contact" class="card-link"><span data-i18n="readMore">Read More</span> <i
+                  class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="contactEyebrow">LET'S CONNECT</span>
+          <h2><span data-i18n="contactTitle">Contact</span> <span class="gradient-text">Me</span></h2>
+          <p data-i18n="contactIntro">Have a question or project idea? Send me a message.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3 data-i18n="contactSubtitle">Let's work together</h3>
+            <p data-i18n="contactDescription">Feel free to contact me about web development, design, or collaboration.
+            </p>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div><small>Email</small><a href="mailto:sharif.bina2021@gmail.com">sharif.bina2021@gmail.com</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+              <div><small>GitHub</small><a href="https://github.com/Mohammadsharifbina" target="_blank"
+                  rel="noopener noreferrer">Mohammadsharifbina</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div><small>WhatsApp</small><a href="https://wa.me/93700000000" target="_blank"
+                  rel="noopener noreferrer">Message on WhatsApp</a></div>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group"><label for="senderName" data-i18n="formName">Your Name</label><input id="senderName"
+                name="name" type="text" autocomplete="name" required maxlength="100" placeholder="Enter your name">
+            </div>
+            <div class="form-group"><label for="senderEmail" data-i18n="formEmail">Your Email</label><input
+                id="senderEmail" name="email" type="email" autocomplete="email" required maxlength="254"
+                placeholder="Enter your email"></div>
+            <div class="form-group"><label for="senderMessage" data-i18n="formMessage">Your Message</label><textarea
+                id="senderMessage" name="message" required maxlength="5000"
+                placeholder="Write your message..."></textarea></div>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i><span
+                data-i18n="sendMessage">Send Message</span></button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <a href="#home" class="logo">Sharif<span>Bina.</span></a>
+      <div class="footer-socials">
+        <a href="https://github.com/Mohammadsharifbina" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="mailto:sharif.bina2021@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://wa.me/93700000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+            class="fa-brands fa-whatsapp"></i></a>
+        <a href="#home" aria-label="Back to home"><i class="fa-solid fa-house"></i></a>
+        <a href="#projects" aria-label="Projects"><i class="fa-solid fa-laptop-code"></i></a>
+      </div>
+      <p><i class="fa-regular fa-copyright"></i> <span id="year"></span> Sharif Bina. <span data-i18n="copyright">All
+          rights reserved.</span></p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top"><i
+      class="fa-solid fa-arrow-up"></i></button>
+
+  <script>
+    "use strict";
+
+    const translations = {
+      en: {
+        navHome: "Home", navAbout: "About", navSkills: "Skills", navProjects: "Projects", navPosts: "Posts", navContact: "Contact",
+        heroEyebrow: "WELCOME TO MY PORTFOLIO", heroHello: "Hi, I'm",
+        heroRole: "Full-Stack Developer & Graphic Designer",
+        heroDescription: "I build responsive websites and creative digital experiences using modern web technologies. Welcome to my personal portfolio.",
+        viewProjects: "Explore Projects", contactMe: "Contact Me",
+        aboutEyebrow: "GET TO KNOW ME", aboutTitle: "About", aboutSubtitle: "Developer by passion, creator by nature.",
+        aboutText1: "My name is Sharif Bina. I am a Full-Stack Developer and Graphic Designer interested in creating useful, attractive, and accessible digital products.",
+        aboutText2: "I work with HTML, CSS, JavaScript, PHP, and Laravel. I enjoy learning new technologies and turning ideas into practical web experiences.",
+        detailName: "Name", detailRole: "Profession", roleValue: "Developer & Designer", detailEmail: "Email", detailLanguages: "Languages", languageValue: "Pashto & English",
+        skillsEyebrow: "WHAT I WORK WITH", skillsTitle: "My", skillsIntro: "Technologies and creative skills I use to bring ideas to life.",
+        skillHtml: "Semantic and accessible website structure.", skillCss: "Responsive layouts, animation, and modern styling.",
+        skillJs: "Interactive interfaces and browser functionality.", skillPhp: "Server-side programming and web applications.",
+        skillLaravel: "PHP framework for structured web development.", designTitle: "Graphic Design", skillDesign: "Visual communication and creative digital designs.",
+        projectsEyebrow: "MY RECENT WORK", projectsTitle: "Featured", projectsIntro: "A selection of projects and concepts. Replace these examples with your real work.",
+        project1Title: "Personal Portfolio", project1Text: "A responsive portfolio for presenting skills, work, and contact details.",
+        project2Title: "Dashboard Concept", project2Text: "A dashboard concept for organizing information and managing content.",
+        project3Title: "Laravel Web App", project3Text: "A sample web application concept built around PHP and Laravel.", sourceCode: "View GitHub",
+        postsEyebrow: "IDEAS & KNOWLEDGE", postsTitle: "Latest", postsIntro: "Notes, tutorials, and ideas from my development journey.",
+        post1Title: "Getting Started with Web Development", post1Text: "An introduction to HTML, CSS, and JavaScript for beginners.",
+        post2Title: "Understanding Laravel", post2Text: "Explore the basics of building structured PHP applications.",
+        post3Title: "AI Tools for Developers", post3Text: "How AI assistants can support coding, testing, and learning.", readMore: "Read More",
+        contactEyebrow: "LET'S CONNECT", contactTitle: "Contact", contactIntro: "Have a question or project idea? Send me a message.",
+        contactSubtitle: "Let's work together", contactDescription: "Feel free to contact me about web development, design, or collaboration.",
+        formName: "Your Name", formEmail: "Your Email", formMessage: "Your Message", sendMessage: "Send Message",
+        copyright: "All rights reserved.", formOpening: "Opening your email application...", formError: "Please complete all fields correctly.",
+        namePlaceholder: "Enter your name", emailPlaceholder: "Enter your email", messagePlaceholder: "Write your message...",
+        emailSubject: "Portfolio contact from ", emailBody: "Name: ", emailBodyAddress: "\nEmail: ", emailBodyMessage: "\n\nMessage:\n"
+      },
+      ps: {
+        navHome: "کور", navAbout: "زما په اړه", navSkills: "مهارتونه", navProjects: "پروژې", navPosts: "لیکنې", navContact: "اړیکه",
+        heroEyebrow: "زما شخصي پورټفولیو ته ښه راغلاست", heroHello: "سلام، زه",
+        heroRole: "Full-Stack پراختیاکوونکی او ګرافیک ډیزاینر",
+        heroDescription: "زه د HTML، CSS، JavaScript او نورو عصري ټکنالوژیو په وسیله ځواب‌ویونکي ویب‌سایټونه جوړوم. زما شخصي پورټفولیو ته ښه راغلاست.",
+        viewProjects: "پروژې وګورئ", contactMe: "اړیکه ونیسئ",
+        aboutEyebrow: "ما وپېژنئ", aboutTitle: "زما په اړه", aboutSubtitle: "د شوق له مخې پراختیاکوونکی، د طبیعت له مخې نوښتګر.",
+        aboutText1: "زما نوم شریف بینا دی. زه Full-Stack پراختیاکوونکی او ګرافیک ډیزاینر یم او د ګټورو، ښکلو او اسانه ډیجیټلي محصولاتو جوړولو سره مینه لرم.",
+        aboutText2: "زه له HTML، CSS، JavaScript، PHP او Laravel سره کار کوم. د نوې ټکنالوژۍ زده کړه او عملي ویب‌پاڼې جوړول خوښوم.",
+        detailName: "نوم", detailRole: "دنده", roleValue: "پراختیاکوونکی او ډیزاینر", detailEmail: "برېښنالیک", detailLanguages: "ژبې", languageValue: "پښتو او انګلیسي",
+        skillsEyebrow: "زما کاري وسایل", skillsTitle: "زما مهارتونه", skillsIntro: "هغه تخنیکي او هنري مهارتونه چې د نظریاتو په عملي کولو کې یې کاروم.",
+        skillHtml: "د ویب‌پاڼې منظم او د لاسرسي وړ جوړښت.", skillCss: "ځواب‌ویونکی ډیزاین، انیمېشن او عصري بڼه.",
+        skillJs: "متقابلې پاڼې او د براوزر فعالیتونه.", skillPhp: "د سرور اړخ پروګرامونه او ویب اپلېکېشنونه.",
+        skillLaravel: "د PHP چوکاټ د منظم ویب پراختیا لپاره.", designTitle: "ګرافیک ډیزاین", skillDesign: "بصري اړیکې او تخلیقي ډیجیټلي ډیزاینونه.",
+        projectsEyebrow: "زما وروستي کارونه", projectsTitle: "غوره پروژې", projectsIntro: "د پروژو څو بېلګې؛ دا د خپلو واقعي کارونو له مخې بدلولی شئ.",
+        project1Title: "شخصي پورټفولیو", project1Text: "ځواب‌ویونکی پورټفولیو د مهارتونو، کارونو او اړیکو د ښودلو لپاره.",
+        project2Title: "د ډشبورډ طرحه", project2Text: "د معلوماتو تنظیم او مدیریت لپاره د ډشبورډ طرحه.",
+        project3Title: "Laravel ویب اپلېکېشن", project3Text: "د PHP او Laravel پر بنسټ د ویب اپلېکېشن یوه بېلګه.", sourceCode: "GitHub وګورئ",
+        postsEyebrow: "نظریات او پوهه", postsTitle: "وروستۍ لیکنې", postsIntro: "زما د پروګرام‌جوړونې د تجربو یادښتونه، لارښودونه او نظریات.",
+        post1Title: "د ویب پراختیا پیل", post1Text: "د HTML، CSS او JavaScript د زده کړې لومړنۍ پېژندنه.",
+        post2Title: "د Laravel پېژندنه", post2Text: "د PHP منظم اپلېکېشنونو د جوړولو بنسټونه.",
+        post3Title: "د پراختیاکوونکو لپاره AI", post3Text: "د AI مرستیالان د کوډ، ازموینې او زده کړې په برخه کې.",
+        readMore: "نور ولولئ",
+        contactEyebrow: "راځئ اړیکه ونیسو", contactTitle: "اړیکه", contactIntro: "پوښتنه یا د پروژې نظریه لرئ؟ پیغام راولېږئ.",
+        contactSubtitle: "راځئ یوځای کار وکړو", contactDescription: "د ویب پراختیا، ډیزاین یا همکارۍ په اړه راسره اړیکه نیولی شئ.",
+        formName: "ستاسو نوم", formEmail: "ستاسو برېښنالیک", formMessage: "ستاسو پیغام", sendMessage: "پیغام واستوئ",
+        copyright: "ټول حقوق خوندي دي.", formOpening: "ستاسو د برېښنالیک پروګرام پرانیستل کېږي...", formError: "مهرباني وکړئ ټول معلومات په سمه توګه بشپړ کړئ.",
+        namePlaceholder: "خپل نوم ولیکئ", emailPlaceholder: "خپل برېښنالیک ولیکئ", messagePlaceholder: "خپل پیغام ولیکئ...",
+        emailSubject: "د پورټفولیو پیغام له ", emailBody: "نوم: ", emailBodyAddress: "\nبرېښنالیک: ", emailBodyMessage: "\n\nپیغام:\n"
+      }
+    };
+
+    let currentLanguage = "en";
+    const languageBtn = document.getElementById("languageBtn");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const contactForm = document.getElementById("contactForm");
+    const formStatus = document.getElementById("formStatus");
+    const backTop = document.getElementById("backTop");
+
+    function setLanguage(language) {
+      currentLanguage = language;
+      const dict = translations[language];
+      document.documentElement.lang = language;
+      document.documentElement.dir = language === "ps" ? "rtl" : "ltr";
+      document.body.dir = language === "ps" ? "rtl" : "ltr";
+      document.title = language === "ps" ? "محمد شریف بینا | شخصي پورټفولیو" : "Sharif Bina | Developer Portfolio";
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) el.textContent = dict[key];
+      });
+
+      document.querySelectorAll("input[placeholder],textarea[placeholder]").forEach(el => {
+        const key = el.id === "senderName" ? "namePlaceholder" : el.id === "senderEmail" ? "emailPlaceholder" : "messagePlaceholder";
+        if (dict[key]) el.placeholder = dict[key];
+      });
+
+      languageBtn.textContent = language === "en" ? "پښتو" : "English";
+      languageBtn.setAttribute("aria-label", language === "en" ? "Switch to Pashto" : "Switch to English");
+      formStatus.textContent = "";
+    }
+
+    languageBtn.addEventListener("click", () => setLanguage(currentLanguage === "en" ? "ps" : "en"));
+
+    menuBtn.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(open));
+      menuBtn.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+
+    window.addEventListener("scroll", () => backTop.classList.toggle("visible", window.scrollY > 450));
+    backTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    contactForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const dict = translations[currentLanguage];
+      const name = document.getElementById("senderName").value.trim();
+      const email = document.getElementById("senderEmail").value.trim();
+      const message = document.getElementById("senderMessage").value.trim();
+
+      if (!name || !email || !message || !document.getElementById("senderEmail").checkValidity()) {
+        formStatus.textContent = dict.formError;
+        return;
+      }
+
+      const subject = dict.emailSubject + name;
+      const body = dict.emailBody + name + dict.emailBodyAddress + email + dict.emailBodyMessage + message;
+      formStatus.textContent = dict.formOpening;
+      window.location.href = "mailto:sharif.bina2021@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    });
+
+    setLanguage("en");
+  </script>
+</body>
+
+</html>
